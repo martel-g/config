@@ -1,0 +1,3 @@
+[submodule "vim/--force"]
+	path = vim/--force
+	url = https://github.com/tpope/vim-pathogen.git
