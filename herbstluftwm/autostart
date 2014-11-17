@@ -107,7 +107,7 @@ hc keybind $Mod-c cycle
 hc keybind $Mod-i jumpto urgent
 
 # colors
-hc set window_border_active_color "$COLOR9"
+hc set window_border_active_color "#6bb2df"
 hc set window_border_normal_color '#444'
 hc set frame_border_normal_color '#444'
 #hc set frame_bg_normal_color '#565656'
@@ -159,5 +159,23 @@ done
 
 # ~/.config/herbstluftwm/wallpaper.sh &
 
-wp change bg1.jpg
+wp change bg2.jpg
 compton 
+
+
+# GIMP
+# ensure there is a gimp tag
+hc add gimp
+hc load gimp '
+(split horizontal:0.850000:0
+(split horizontal:0.200000:1
+(clients vertical:0)
+(clients grid:0))
+(clients vertical:0))
+'               # load predefined layout
+# center all other gimp windows on gimp tag
+hc rule class=Gimp tag=gimp index=01 pseudotile=on
+hc rule class=Gimp windowrole~'gimp-(image-window|toolbox|dock)' \
+        pseudotile=off
+hc rule class=Gimp windowrole=gimp-toolbox focus=off index=00
+hc rule class=Gimp windowrole=gimp-dock focus=off index=1

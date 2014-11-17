@@ -5,36 +5,66 @@
 
 filetype plugin indent on
 execute pathogen#infect()
+"
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 syntax enable
 "set background=dark
 "colorscheme solarized
-"set t_Co=256
+set t_Co=256
+
+colorscheme slate
+
+highlight Pmenu ctermfg=2 ctermbg=0
 
 let mapleader=","
 set number
 set encoding=utf8
 set nobackup
-set backspace=indent,eol,start
-set backspace=2
 set noswapfile
-set expandtab
-set nowb
-set so=7
-set wildmenu
-set laststatus=2
+
 set showcmd
+set showmode
+set ruler
+set laststatus=2
+set statusline=[%n]%m[%03.3c,%04.4l]%r%-25.25(%y[%{&ff}][%{&fenc}]%)%-40.40(%F%)%<%=(%3P)
+set cmdheight=1
+set scrolloff=2
+set display=lastline
+set nowrap
+set linebreak
+
 set tabstop=8
 set shiftwidth=8
-set hidden
-set expandtab
 set softtabstop=8
-set foldmethod=indent
-set foldnestmax=10
-set nofoldenable
-set foldlevel=1
-"set guifont=Liberation\ Mono\ for\ Powerline\ 10 
-"let g:Powerline_symbols = 'fancy'
+set expandtab
+set shiftround  
+
+set foldmethod=marker
+set foldenable
+
+set magic
+set wrapscan
+set ignorecase
+set smartcase
+set nohlsearch
+set incsearch
+
+set noautoindent      
+set nosmartindent    
+set nocindent       
+set nocopyindent  
+
+set hidden
+set ttyfast
+set nolazyredraw
+set modeline
+set modelines=3
+set notitle
+
+set pastetoggle=<F12>
 
 map <left> <nop>
 map <right> <nop>
@@ -64,3 +94,5 @@ vmap jk <esc>
 
 "let g:ctrlp_map = '<c-p>'
 "let g:ctrlp_cmd = 'CtrlP'
+"
+hi MatchParen ctermfg=red ctermbg=none  guifg=red guibg=black 
