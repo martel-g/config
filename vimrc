@@ -78,7 +78,7 @@ map <C-t> :tabnew<cr>
 map <right> :tabnext<cr>
 map <left> :tabprev<cr>
 
-"nmap <Char-249> :A<cr>
+nmap <Char-249> :A<cr>
 
 map <C-a> :wa<cr>
 
