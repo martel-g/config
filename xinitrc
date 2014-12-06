@@ -14,4 +14,4 @@ fi
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 exec herbstluftwm --locked
-# exec gnome-session
+#exec gnome-session
